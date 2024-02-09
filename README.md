@@ -1,4 +1,3 @@
-# nvim
+# my nvim setup
 
-brew install ripgrep
-brew install fd
+https://github.com/AndreiMotinga/dotfiles
