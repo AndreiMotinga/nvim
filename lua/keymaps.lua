@@ -1,10 +1,9 @@
 vim.keymap.set("n", "<leader>w", ":wa <cr>")
-vim.keymap.set("n", "<leader>r", ":source $MYVIMRC <cr>")
 vim.keymap.set("n", "<leader>n", ":bn <cr>")
 vim.keymap.set("n", "<leader>m", ":bp <cr>")
 vim.keymap.set("n", "<leader>q", ":%bd <cr>")
 vim.keymap.set("n", "<leader>et", ":e ~/.config/nvim/todo<cr>")
-vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr>")
+vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/lua/plugins/lsp.lua<cr>")
 
 vim.keymap.set("n", "k", "gk")
 vim.keymap.set("n", "j", "gj")
