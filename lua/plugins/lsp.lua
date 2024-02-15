@@ -1,3 +1,5 @@
+local servers = { "emmet_ls", "lua_ls", "solargraph", "tsserver", "tailwindcss" }
+
 return {
   {
     "williamboman/mason.nvim",
@@ -9,7 +11,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "emmet_ls", "lua_ls", "solargraph", "tsserver" },
+        ensure_installed = servers
       })
     end,
   },
@@ -19,16 +21,11 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-      })
-      lspconfig.tsserver.setup({
-        capabilities = capabilities,
-      })
-
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-      })
+      for _, server in ipairs(servers) do
+        lspconfig[server].setup({
+          capabilities = capabilities,
+        })
+      end
     end,
   },
 }
