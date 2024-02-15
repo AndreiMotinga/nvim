@@ -51,3 +51,12 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "eruby.yaml",
   command = "set filetype=yaml",
 })
+
+-- save folds
+vim.api.nvim_exec([[
+augroup remember_folds
+  autocmd!
+  au BufWinLeave ?* mkview 1
+  au BufWinEnter ?* silent! loadview 1
+augroup END
+]], false)
