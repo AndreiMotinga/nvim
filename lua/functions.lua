@@ -27,11 +27,6 @@ vim.api.nvim_exec(
      \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal g`\"" |
      \ endif
-   " Set syntax highlighting for specific file types
-   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
-   autocmd BufRead,BufNewFile *.md set filetype=markdown
-   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-   autocmd BufRead,BufNewFile .erb set filetype=html
   augroup END
 ]],
   false
@@ -48,3 +43,11 @@ vim.cmd([[
   autocmd FileChangedShellPost *
     \ echohl(WarningMsg) | echo("File changed on disk. Buffer reloaded.") | echohl(None)
 ]])
+
+-- TODO: maybe bug, try to solve it better
+-- but for now syntax highlight doesnt work properly
+-- in .yml files.  set filytype to yaml for it to work properly.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "eruby.yaml",
+  command = "set filetype=yaml",
+})
