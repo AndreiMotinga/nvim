@@ -33,7 +33,7 @@ vim.opt.shiftwidth = 2                          -- the number of spaces inserted
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.number = true                           -- set numbered lines
 vim.opt.autoread = true                         -- trigger update when file changes on disk
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.list = true
 vim.opt.listchars = "tab:»·,trail:·,nbsp:·"     -- visualize empty space
 vim.opt.iskeyword:append("-")                   -- treat foo-bar as one word
