@@ -33,6 +33,7 @@ vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "===", vim.lsp.buf.format, {})
 vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
+vim.keymap.set('n', 'rn', vim.lsp.buf.rename, {})
 
 -- vim-test
 vim.keymap.set("n", "<leader>t", ":wa<cr>:TestFile<cr>")
