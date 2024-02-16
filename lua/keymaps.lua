@@ -29,11 +29,7 @@ vim.api.nvim_set_keymap('i', 'bp', 'binding.pry', { noremap = true, expr = false
 -- vim.keymap.set('v', '<C-k>', '<C-u>zz', {})
 
 -- LSP
--- vim has gf - go to file
--- and vim-rails improves on it. but it doesnt seem to be working all the time
--- this overrides it to use LSP definition instead
--- if you want to return to vim-rails' gf - change thid to something like gd
-vim.keymap.set("n", "gf", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "===", vim.lsp.buf.format, {})
 vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
