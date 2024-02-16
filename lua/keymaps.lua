@@ -17,16 +17,16 @@ vim.keymap.set("n", "<space><space>", ":b#<CR>")
 vim.api.nvim_set_keymap('i', 'bp', 'binding.pry', { noremap = true, expr = false, silent = true })
 
 -- search movement keeps cursor in middle
-vim.keymap.set('n', 'n', 'nzzzv', {})
-vim.keymap.set('n', 'N', 'Nzzzv', {})
+-- vim.keymap.set('n', 'n', 'nzzzv', {})
+-- vim.keymap.set('n', 'N', 'Nzzzv', {})
 
 -- vertical movement keeps cursor in middle
-vim.keymap.set('n', '<C-j>', '<C-d>zz', {})
-vim.keymap.set('n', '<C-k>', '<C-u>zz', {})
+-- vim.keymap.set('n', '<C-j>', '<C-d>zz', {})
+-- vim.keymap.set('n', '<C-k>', '<C-u>zz', {})
 
 -- vertical movement keeps cursor in middle (visual mode)
-vim.keymap.set('v', '<C-j>', '<C-d>zz', {})
-vim.keymap.set('v', '<C-k>', '<C-u>zz', {})
+-- vim.keymap.set('v', '<C-j>', '<C-d>zz', {})
+-- vim.keymap.set('v', '<C-k>', '<C-u>zz', {})
 
 -- LSP
 -- vim has gf - go to file
