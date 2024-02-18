@@ -1,3 +1,4 @@
+-- let test#project_root = "~/dev/inteliquent/atlas-customer-data-lifecycle"
 return {
   "jgdavey/tslime.vim",
   config = function()
