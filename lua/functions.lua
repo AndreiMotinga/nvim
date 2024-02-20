@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_exec([[
 augroup remember_folds
   autocmd!
-  au BufWinLeave ?* mkview 1
-  au BufWinEnter ?* silent! loadview 1
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent! loadview
 augroup END
 ]], false)
