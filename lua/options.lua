@@ -39,6 +39,7 @@ vim.opt.list = true
 vim.opt.listchars = "tab:»·,trail:·,nbsp:·"     -- visualize empty space
 vim.opt.iskeyword:append("-")                   -- treat foo-bar as one word
 vim.opt.breakindent = true                      -- preserve the indentation of virtual line. ie wrapped line
+vim.opt.viewoptions='folds,cursor'              -- only save these for mkview
 
 -- hack to make switching from vim to tmux pane quicker. it lags without this
 -- more at https://github.com/christoomey/vim-tmux-navigator/issues/72
