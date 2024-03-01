@@ -6,6 +6,8 @@ return {
       prefer_startup_root = true,
       filters = {
         git_ignored = false,
+        custom = { '.DS_Store' },
+
       },
     })
   end,
