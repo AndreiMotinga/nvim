@@ -3,16 +3,17 @@ return {
   tag = "0.1.5",
   dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
   config = function()
-    local actions = require "telescope.actions"
-    require('telescope').setup({
+    local actions = require("telescope.actions")
+    require("telescope").setup({
       defaults = {
         layout_config = { width = 0.9 },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.move_selection_next,
             ["<esc>"] = actions.close,
           },
-        }
+        },
       },
     })
   end,
