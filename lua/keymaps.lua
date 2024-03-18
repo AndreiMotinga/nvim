@@ -5,16 +5,16 @@ vim.keymap.set("n", "<leader>q", ":%bd <cr>")
 vim.keymap.set("n", "<leader>et", ":e ~/dev/dotfiles/todo<cr>")
 vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr> :NvimTreeOpen<cr>")
 
-vim.keymap.set("n", "k", "gk")           --treat virtual line as regular line when moving up
-vim.keymap.set("n", "j", "gj")           --treat virtual line as regular line when moving down
+vim.keymap.set("n", "k", "gk") --treat virtual line as regular line when moving up
+vim.keymap.set("n", "j", "gj") --treat virtual line as regular line when moving down
 vim.keymap.set("i", "jk", "<esc>")
 vim.keymap.set("i", "uu", "<esc>u")
-vim.keymap.set("n", "0", "^")            -- move to beginning of line
+vim.keymap.set("n", "0", "^") -- move to beginning of line
 vim.keymap.set("n", "-==", "mmgg=G`m^zz`<Esc> :w<CR>")
 vim.keymap.set("n", "q:", "<nop>")
 vim.keymap.set("n", "<space><space>", ":b#<CR>")
 
-vim.api.nvim_set_keymap('i', 'bp', 'binding.pry', { noremap = true, expr = false, silent = true })
+vim.api.nvim_set_keymap("i", "bp", "binding.pry", { noremap = true, expr = false, silent = true })
 
 -- search movement keeps cursor in middle
 -- vim.keymap.set('n', 'n', 'nzzzv', {})
@@ -32,10 +32,16 @@ vim.api.nvim_set_keymap('i', 'bp', 'binding.pry', { noremap = true, expr = false
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 
 -- formatting
--- vim.keymap.set("n", "===", vim.lsp.buf.format, {})
+vim.keymap.set({ "n", "v" }, "===", function()
+  conform.format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
+  })
+end, { desc = "Format file or range (in visual mode)" })
 
 -- vim-test
 vim.keymap.set("n", "<leader>t", ":wa<cr>:TestFile<cr>")
