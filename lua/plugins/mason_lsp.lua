@@ -1,4 +1,4 @@
-local servers = { "emmet_ls", "lua_ls", "solargraph", "tsserver", "tailwindcss" }
+local servers = { "emmet_ls", "lua_ls", "solargraph", "ruby_ls", "rubocop", "tsserver", "tailwindcss", "stimulus_ls" }
 
 return {
   {
