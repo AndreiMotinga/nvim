@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>n", ":bn <cr>")
 vim.keymap.set("n", "<leader>m", ":bp <cr>")
 vim.keymap.set("n", "<leader>q", ":%bd <cr>")
 vim.keymap.set("n", "<leader>et", ":e ~/dev/dotfiles/todo<cr>")
-vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr> :NvimTreeOpen<cr>")
+vim.keymap.set("n", "<leader>ev", ":e ~/.config/nvim/init.lua<cr> :NvimTreeFindFileToggle!<cr>")
 
 vim.keymap.set("n", "k", "gk") --treat virtual line as regular line when moving up
 vim.keymap.set("n", "j", "gj") --treat virtual line as regular line when moving down
@@ -47,4 +47,4 @@ vim.keymap.set("n", "K", ":Telescope grep_string <cr>")
 
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle <cr>")
-vim.keymap.set("n", "<leader>f", ":NvimTreeFindFile <cr>")
+vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle! <cr>")
