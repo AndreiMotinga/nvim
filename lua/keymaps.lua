@@ -34,15 +34,6 @@ vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 
--- formatting
-vim.keymap.set({ "n", "v" }, "===", function()
-  conform.format({
-    lsp_fallback = true,
-    async = false,
-    timeout_ms = 500,
-  })
-end, { desc = "Format file or range (in visual mode)" })
-
 -- vim-test
 vim.keymap.set("n", "<leader>t", ":wa<cr>:TestFile<cr>")
 vim.keymap.set("n", "<leader>s", ":wa<cr>:TestNearest<cr>")
