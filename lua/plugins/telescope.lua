@@ -15,6 +15,9 @@ return {
               ["<esc>"] = actions.close,
             },
           },
+          file_ignore_patterns = {
+            "all_custom_pages*",
+          },
         },
       })
     end,
