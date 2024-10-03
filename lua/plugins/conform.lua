@@ -23,7 +23,7 @@ return {
         ruby = { "rubocop" },
         eruby = { "htmlbeautifier" },
       },
-      format_on_save = {
+      format_after_save = {
         lsp_fallback = true,
         async = true,
       },
