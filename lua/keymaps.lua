@@ -48,3 +48,7 @@ vim.keymap.set("n", "K", ":Telescope grep_string <cr>")
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle <cr>")
 vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle! <cr>")
+
+
+-- Lazygit
+vim.keymap.set("n", "<leader>lg", ":LazyGit<cr>")
