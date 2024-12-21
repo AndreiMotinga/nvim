@@ -14,7 +14,7 @@ vim.keymap.set("n", "-==", "mmgg=G`m^zz`<Esc> :w<CR>")
 vim.keymap.set("n", "q:", "<nop>")
 vim.keymap.set("n", "<space><space>", ":b#<CR>")
 
-vim.api.nvim_set_keymap("i", "bp", "binding.b", { noremap = true, expr = false, silent = true })
+vim.api.nvim_set_keymap("i", "bp", "binding.pry", { noremap = true, expr = false, silent = true })
 
 -- search movement keeps cursor in middle
 -- vim.keymap.set('n', 'n', 'nzzzv', {})
