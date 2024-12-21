@@ -29,6 +29,7 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 vim.opt.colorcolumn = "95"
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
+vim.opt.colorcolumn = "124"
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
 vim.opt.expandtab = true                        -- convert tabs to spaces
