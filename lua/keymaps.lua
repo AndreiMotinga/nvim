@@ -38,11 +38,13 @@ vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 vim.keymap.set("n", "<leader>t", ":wa<cr>:TestFile<cr>")
 vim.keymap.set("n", "<leader>s", ":wa<cr>:TestNearest<cr>")
 vim.keymap.set("n", "<leader>l", ":wa<cr>:TestLast<cr>")
-vim.keymap.set("n", "<leader>a", ":wa<cr>:TestSuite<cr>")
 
 -- telescope
 vim.keymap.set("n", "<C-p>", ":Telescope find_files <cr>")
 vim.keymap.set("n", "<C-g>", ":Telescope live_grep <cr>")
+vim.keymap.set("n", "<C-m>", ":Telescope harpoon marks <cr>")
+
+vim.keymap.set("n", "<C-d>", ":Telescope live_grep search_dirs=", { desc = "Global search from working directory" })
 vim.keymap.set("n", "K", ":Telescope grep_string <cr>")
 
 -- nvim-tree
@@ -54,3 +56,7 @@ vim.keymap.set("n", "<leader>gb", ":Gitsigns blame <cr>")
 
 -- Lazygit
 vim.keymap.set("n", "<leader>lg", ":LazyGit<cr>")
+
+-- harpoon
+vim.keymap.set("n", "<leader>h", ":lua require('harpoon.ui').toggle_quick_menu() <cr>")
+vim.keymap.set("n", "<leader>a", ":lua require('harpoon.mark').add_file() <cr>")

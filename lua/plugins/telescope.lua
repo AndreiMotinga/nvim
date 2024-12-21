@@ -4,6 +4,8 @@ return {
     tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
     config = function()
+      require("telescope").load_extension("harpoon")
+
       local actions = require("telescope.actions")
       require("telescope").setup({
         defaults = {
