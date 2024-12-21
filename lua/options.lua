@@ -42,6 +42,11 @@ vim.opt.iskeyword:append("-") -- treat foo-bar as one word
 vim.opt.breakindent = true -- preserve the indentation of virtual line. ie wrapped line
 vim.opt.viewoptions = "folds,cursor" -- only save these for mkview
 
+vim.opt.foldcolumn = "3" -- show folds to the left
+vim.opt.foldenable = true -- start with all folds closed
+vim.opt.foldmethod = "indent" -- start with all folds open
+vim.opt.foldlevelstart = 2
+
 -- hack to make switching from vim to tmux pane quicker. it lags without this
 -- more at https://github.com/christoomey/vim-tmux-navigator/issues/72
 vim.opt.shell = "/bin/bash"
