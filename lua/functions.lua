@@ -63,3 +63,13 @@ vim.api.nvim_create_autocmd("FileType", {
 --   desc = "load view (folds), when opening file",
 --   command = "silent! loadview"
 -- })
+--
+-- Function to enable folding if the file has more than 100 lines
+function enable_fold_if_long_file()
+  -- Get the number of lines in the current buffer
+  local line_count = vim.fn.line("$")
+  vim.opt.foldenable = (line_count > 160)
+end
+
+-- Call the function when opening a file
+vim.cmd("autocmd BufReadPost * lua enable_fold_if_long_file()")
