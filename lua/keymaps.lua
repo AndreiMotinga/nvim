@@ -42,8 +42,8 @@ vim.keymap.set("n", "<leader>l", ":wa<cr>:TestLast<cr>")
 -- telescope
 vim.keymap.set("n", "<C-p>", ":Telescope find_files <cr>")
 vim.keymap.set("n", "<C-g>", ":Telescope live_grep <cr>")
-vim.keymap.set("n", "<C-m>", ":Telescope harpoon marks <cr>")
-
+-- disable for now because it breaks quickfix opening file and I dont really use it.
+-- vim.keymap.set("n", "<C-n>", ":Telescope harpoon marks <cr>")
 vim.keymap.set("n", "<C-d>", ":Telescope live_grep search_dirs=", { desc = "Global search from working directory" })
 vim.keymap.set("n", "K", ":Telescope grep_string <cr>")
 
