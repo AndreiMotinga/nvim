@@ -26,7 +26,6 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
-vim.opt.colorcolumn = "95"
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.colorcolumn = "124"
