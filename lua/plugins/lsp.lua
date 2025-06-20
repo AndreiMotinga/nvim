@@ -1,15 +1,16 @@
-local servers =
-  { "emmet_ls", "lua_ls", "solargraph", "ruby_lsp", "rubocop", "ts_ls", "tailwindcss", "stimulus_ls", "cssls" }
+local servers = { "emmet_ls", "lua_ls", "ts_ls", "tailwindcss", "stimulus_ls", "cssls" }
 
 return {
   {
     "williamboman/mason.nvim",
+    lazy = false,
     config = function()
       require("mason").setup({})
     end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    lazy = false,
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = servers,
@@ -18,28 +19,23 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+      lspconfig.ruby_lsp.setup({})
+
       for _, server in ipairs(servers) do
-        if server == "ruby_lsp" then
-          -- Custom setup for ruby_lsp
-          lspconfig[server].setup({
-            cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv("GLOBAL_GEMFILE") },
-            capabilities = capabilities,
-          })
-        else
-          -- Standard setup for other LSP servers
-          lspconfig[server].setup({
-            capabilities = capabilities,
-          })
-        end
+        lspconfig[server].setup({
+          capabilities = capabilities,
+        })
       end
     end,
   },
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    lazy = false,
     config = function()
       local mason_tool_installer = require("mason-tool-installer")
 
@@ -49,7 +45,6 @@ return {
           "stylua", -- lua formatter
           "eslint_d", -- js linter
           "beautysh", -- shell
-          "rubocop", -- ruby formatter
           "htmlbeautifier", -- html & erb
         },
       })

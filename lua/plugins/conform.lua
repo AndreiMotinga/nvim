@@ -20,8 +20,7 @@ return {
         sh = { "beautysh" },
         zsh = { "beautysh" },
         lua = { "stylua" },
-        -- ruby = { "rubocop" },
-        ruby = { "/Users/andrei.motinga/.rbenv/versions/3.1.2/bin/rubocop" },
+        ruby = { "rubocop" },
         eruby = { "htmlbeautifier" },
       },
       format_after_save = {
