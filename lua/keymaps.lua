@@ -54,9 +54,6 @@ vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle! <cr>")
 -- Gitsigns
 vim.keymap.set("n", "<leader>gb", ":Gitsigns blame <cr>")
 
--- Lazygit
-vim.keymap.set("n", "<leader>lg", ":LazyGit<cr>")
-
 -- harpoon
 vim.keymap.set("n", "<leader>h", ":lua require('harpoon.ui').toggle_quick_menu() <cr>")
 vim.keymap.set("n", "<leader>a", ":lua require('harpoon.mark').add_file() <cr>")
