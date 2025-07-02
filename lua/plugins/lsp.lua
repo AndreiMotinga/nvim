@@ -24,7 +24,12 @@ return {
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.ruby_lsp.setup({})
+      -- https://github.com/mason-org/mason.nvim/issues/1777#issuecomment-2579045185
+      -- gem install ruby-lsp
+      -- use global while bug isn't resolved
+      lspconfig.ruby_lsp.setup({
+        cmd_env = { BUNDLE_GEMFILE = vim.fn.getenv("GLOBAL_GEMFILE") },
+      })
 
       for _, server in ipairs(servers) do
         lspconfig[server].setup({
