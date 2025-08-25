@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap("i", "bp", "binding.pry", { noremap = true, expr = false
 
 -- LSP
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
+-- vim.keymap.set("n", "J", "<cmd>lua vim.lsp.buf.hover()<CR>", {})
 vim.keymap.set({ "n", "v" }, "ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 

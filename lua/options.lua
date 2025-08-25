@@ -2,7 +2,7 @@ vim.g.mapleader = ","
 
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
 vim.opt.backup = false -- creates a backup file
-vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
@@ -28,7 +28,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.termguicolors = true -- set term gui colors (most terminals support this)
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
-vim.opt.colorcolumn = "124"
+-- vim.opt.colorcolumn = "124"
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.expandtab = true -- convert tabs to spaces
@@ -41,9 +41,10 @@ vim.opt.iskeyword:append("-") -- treat foo-bar as one word
 vim.opt.breakindent = true -- preserve the indentation of virtual line. ie wrapped line
 vim.opt.viewoptions = "folds,cursor" -- only save these for mkview
 
-vim.opt.foldcolumn = "3" -- show folds to the left
-vim.opt.foldenable = true -- start with all folds closed
-vim.opt.foldmethod = "indent" -- start with all folds open
+vim.opt.foldcolumn = "1" -- show folds to the left
+-- vim.opt.foldenable = true -- start with all folds closed. dont use becuase of function enable_fold_if_long_file
+-- vim.opt.foldmethod = "indent"
+vim.foldmethod = "expr"
 vim.opt.foldlevelstart = 4
 
 -- hack to make switching from vim to tmux pane quicker. it lags without this
