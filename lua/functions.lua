@@ -73,3 +73,11 @@ end
 
 -- Call the function when opening a file
 vim.cmd("autocmd BufReadPost * lua enable_fold_if_long_file()")
+
+-- open current file in github
+vim.api.nvim_create_user_command("GhOpen", function()
+  local file = vim.fn.expand("%")
+  local line = vim.fn.line(".")
+  local cmd = string.format("gh browse %s:%d", file, line)
+  os.execute(cmd)
+end, {})
